@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  h1 Conta 
+  div.form-group
+    label data leitura:
+    input.form-control(type='text', disabled, value=(undefined===conta ? '' : conta.data_da_leitura_formatada) )
+    label nº leitura:
+    input.form-control(type='text', disabled, value=(undefined===conta ? '' : conta.numero_da_leitura))
+  div.form-group
+    label kw gasto:
+    input.form-control(type='text', disabled, value=(undefined===conta ? '' : conta.kw_gasto) )
+    label valor a pagar: 
+    input.form-control(type="text", disabled, value=(undefined===conta ? '' : conta.valor_a_pagar) )
+  div.form-group
+    label data pagto:
+    input.form-control(type='text', disabled, value=(undefined===conta ? '' : conta.data_do_pagamento_formatada) )
+    label média consumo:
+    input.form-control(type='text', disabled, value=(undefined===conta ? '' : conta.media_de_consumo) )
+  hr
+  p
+    a(href=conta.url+'/delete') Remover conta
+  p
+    a(href=conta.url+'/update') Alterar conta

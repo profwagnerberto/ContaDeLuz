@@ -1,0 +1,17 @@
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+table{ margin-top: 8px;}
+th{ background-color: lightgray; }
+tr, td { border: 1px solid gray; }
+table td:nth-child(2),
+table td:nth-child(3),
+table td:nth-child(4),
+table td:nth-child(6) { text-align: right; }
+li{ 
+  list-style: none; 
+  margin-top: 10px;
+  color: darkred;
+}

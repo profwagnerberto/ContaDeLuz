@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1=titulo
+
+  form(method='POST')
+    div.form-group
+      label(for='data_da_leitura') data leitura:
+      input#data_da_leitura.form-control(type='date', name='data_da_leitura' required value=(undefined===conta ? '' : conta.data_da_leitura) )
+      label(for='numero_da_leitura') nº leitura:
+      input#numero_da_leitura.form-control(type='number', placeholder='Ex.: 1234' name='numero_da_leitura' required value=(undefined===conta ? '' : conta.numero_da_leitura))
+    div.form-group
+      label(for='kw_gasto') kw gasto:
+      input#kw_gasto.form-control(type='number', placeholder='Ex.: 300' name='kw_gasto' value=(undefined===conta ? '' : conta.kw_gasto) )
+      label(for='valor_a_pagar') valor a pagar:
+      input#valor_a_pagar.form-control(type='number', placeholder='0.00', min="0", step="0.01", title="Valor a pagar deve ser 0 ou maior.", name='valor_a_pagar', value=(undefined===conta ? '' : conta.valor_a_pagar) )
+    div.form-group
+      label(for='data_do_pagamento') data pagto:
+      input#data_do_pagamento.form-control(type='date' name='data_do_pagamento' value=(undefined===conta ? '' : conta.data_do_pagamento) )
+      label(for='media_de_consumo') média consumo:
+      input#media_de_consumo.form-control(type='number', placeholder='0.00', min="0", step="0.01", title="Média de consumo deve ser 0 ou maior.", name='media_de_consumo' value=(undefined===conta ? '' : conta.media_de_consumo) )
+
+    button.btn.btn-primary(type='submit') Salvar
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

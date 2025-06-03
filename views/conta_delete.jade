@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+  h1 #{titulo}
+  p nº leitura: #{conta.numero_da_leitura}
+  p data leitura: #{conta.data_da_leitura_formatada}
+
+  p Confirma a remoção da conta?
+
+  form(method='POST')
+    div.form-group
+      input#contaid.form-control(type='hidden', name='contaid', value=conta._id )
+
+    button.btn.btn-primary(type='submit') Sim

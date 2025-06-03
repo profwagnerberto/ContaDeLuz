@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= titulo
+
+  if conta_lista.length
+    table
+      thead
+        tr
+          th data leitura
+          th nº leitura
+          th kw gasto
+          th valor a pagar
+          th data pagto
+          th média consumo
+      tbody
+        each conta in conta_lista
+          tr
+            td #{conta.data_da_leitura_formatada}
+            td 
+              a(href=conta.url) #{conta.numero_da_leitura}
+            td #{conta.kw_gasto}
+            td #{conta.valor_a_pagar}
+            td #{conta.data_do_pagamento_formatada}
+            td #{conta.media_de_consumo}
+
+    table
+      tbody
+        tr
+          td Menor Consumo
+          td kw_gasto_menor
+          td mes_ano_leitura_menor
+        tr
+          td Maior Consumo
+          td kw_gasto_maior
+          td mes_ano_leitura_maior
+  else
+    p Não há contas cadastradas.

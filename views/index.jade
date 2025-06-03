@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Bem-vindo ao app #[em Contas de Luz], um website NodeJs/Express desenvolvido para fins de estudo e baseado na Mozilla Developer Network.
+
+  h2 Conteúdo dinâmico
+
+  p #[em Contas de Luz] tem as seguintes quantidades de registros:
+
+  ul
+    li #[strong Contas:] !{conta_count}
